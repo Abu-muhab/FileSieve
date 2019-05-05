@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="achorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#paneDragged" onMousePressed="#panePressed" prefHeight="246.0" prefWidth="531.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLDocumentController">
+   <children>
+      <Pane fx:id="pane" layoutX="215.0" onMouseDragged="#paneDragged" onMousePressed="#panePressed" opacity="0.44" prefHeight="301.0" prefWidth="417.0" style="-fx-background-color: #d6dada;" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox layoutX="47.0" layoutY="14.0" spacing="10.0">
+               <children>
+                  <JFXTextField fx:id="keyField" onKeyPressed="#keyTyped" onKeyReleased="#keyTyped" onKeyTyped="#keyTyped" prefHeight="25.0" prefWidth="148.0" promptText="Extension/Keyword">
+                     <HBox.margin>
+                        <Insets right="100.0" />
+                     </HBox.margin>
+                  </JFXTextField>
+                  <JFXButton fx:id="copyButton" disable="true" onAction="#copyButtonClicked" style="-fx-background-color: brown;" text="Copy" textFill="#141414">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXButton>
+                  <JFXButton fx:id="moveButton" disable="true" onAction="#moveButtonClicked" style="-fx-background-color: brown;" text="Move" textFill="#141414">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXButton>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <JFXTextField fx:id="searchField" layoutX="46.0" layoutY="57.0" onKeyPressed="#keyTyped" onKeyReleased="#keyTyped" onKeyTyped="#keyTyped" prefHeight="25.0" prefWidth="359.0" promptText="Search url" />
+            <JFXTextField fx:id="destinationField" layoutX="46.0" layoutY="98.0" onKeyPressed="#keyTyped" onKeyReleased="#keyTyped" onKeyTyped="#keyTyped" prefHeight="25.0" prefWidth="359.0" promptText="Destination url" />
+            <Label layoutX="46.0" layoutY="147.0" text="Search type" />
+            <JFXRadioButton fx:id="currentDirectoryBox" layoutX="133.0" layoutY="147.0" selected="true" text="Current directory only">
+               <toggleGroup>
+                  <ToggleGroup fx:id="radioGroup" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="subDirectoryBox" layoutX="133.0" layoutY="176.0" text="Current and Sub-Directory" toggleGroup="$radioGroup" />
+            <JFXProgressBar fx:id="progressBar" layoutX="18.0" layoutY="232.0" prefHeight="4.0" prefWidth="381.0" visible="false" />
+         </children>
+      </Pane>
+      <ImageView fitHeight="83.0" fitWidth="113.0" layoutX="8.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@search-1.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="14.0" layoutY="149.0" text="File" textFill="#170202" />
+      <Label layoutX="32.0" layoutY="149.0" text="Sieve" textFill="#da1111b2" />
+      <ImageView fx:id="exit" fitHeight="17.0" fitWidth="18.0" layoutX="6.0" layoutY="6.0" onMouseClicked="#exitButtonClicked" opacity="0.33" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@close.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="minimise" fitHeight="25.0" fitWidth="17.0" layoutX="26.0" layoutY="6.0" onMouseClicked="#minimiseButtonClicked" opacity="0.33" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@substract-1.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>
